@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import sys
-from subprocess import SubprocessError, run
+from shutil import which
+from subprocess import SubprocessError, call, run
+
+import pkg_resources
 
 
 class Updater:
