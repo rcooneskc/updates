@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 import sys
-from shutil import which
-from subprocess import SubprocessError, call, run
-
-import pkg_resources
+from subprocess import SubprocessError, run
 
 
 class Updater:
@@ -15,6 +12,10 @@ class Updater:
             ["autoremove", "-y"],
         ],
         "yum": [["update", "-y"]],
+        "dnf": [
+            ["updateinfo"],
+            ["upgrade", "-y"]
+        ]
     }
 
     __elevate = "sudo"
